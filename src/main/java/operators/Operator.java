@@ -3,6 +3,8 @@ package operators;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * 算子类，包含算子权重计算逻辑
  */
@@ -28,7 +30,7 @@ public class Operator {
 
     /**
      * 计算算子权重
-     * @return
+     * @return 算子权重
      */
     public double calculateWeight() {
         return alpha * outputImpact + beta * computationCost + gamma * dependencyDegree;
@@ -42,5 +44,8 @@ public class Operator {
         this.beta = newBeta;
         this.gamma = newGamma;
     }
+
+
+
 
 }

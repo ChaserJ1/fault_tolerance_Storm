@@ -40,5 +40,6 @@ public class OperatorErrorControl implements ErrorControl {
     }
 
     private void setBackupRatio(double ratio) {
+        // 设置备份比例逻辑
     }
 }
