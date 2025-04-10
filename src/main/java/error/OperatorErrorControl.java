@@ -5,13 +5,13 @@ import operators.Operator;
 /**
  * 算子误差控制
  */
-class OperatorErrorControl implements ErrorControl {
+public class OperatorErrorControl implements ErrorControl {
     private Operator operator;
     private double errorThreshold; // 误差阈值
 
     public OperatorErrorControl(Operator op) {
         this.operator = op;
-        // 初始化阈值：权重越高允许误差越小（示例公式）
+        // 初始化阈值：权重越高允许误差越小
         this.errorThreshold = 1.0 / (1 + op.calculateWeight());
     }
 
@@ -27,7 +27,7 @@ class OperatorErrorControl implements ErrorControl {
 
     @Override
     public void adjustBackupStrategy() {
-        // 误差超标时增加备份比例（示例逻辑）
+        // 误差超标时增加备份比例
         double currentBackup = getCurrentBackupRatio();
         double newBackup = Math.min(currentBackup + 0.1, 1.0);
         setBackupRatio(newBackup);

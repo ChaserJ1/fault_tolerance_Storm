@@ -1,11 +1,13 @@
 package storm;
 
-import backtype.storm.spout.SpoutOutputCollector;
-import backtype.storm.task.TopologyContext;
-import backtype.storm.topology.OutputFieldsDeclarer;
-import backtype.storm.topology.base.BaseRichSpout;
-import backtype.storm.tuple.Fields;
-import backtype.storm.tuple.Values;
+
+
+import org.apache.storm.spout.SpoutOutputCollector;
+import org.apache.storm.task.TopologyContext;
+import org.apache.storm.topology.OutputFieldsDeclarer;
+import org.apache.storm.topology.base.BaseRichSpout;
+import org.apache.storm.tuple.Fields;
+import org.apache.storm.tuple.Values;
 
 import java.util.Map;
 
@@ -21,7 +23,7 @@ public class DataSpout extends BaseRichSpout {
     @Override
     public void nextTuple() {
         // 模拟生成数据，实际应用中从数据源读取
-        collector.emit(new Values("example data"));
+        collector.emit(new Values("test data"));
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
